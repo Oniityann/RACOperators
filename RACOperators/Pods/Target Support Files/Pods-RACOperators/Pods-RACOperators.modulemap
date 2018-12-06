@@ -1,0 +1,6 @@
+framework module Pods_RACOperators {
+  umbrella header "Pods-RACOperators-umbrella.h"
+
+  export *
+  module * { export * }
+}
