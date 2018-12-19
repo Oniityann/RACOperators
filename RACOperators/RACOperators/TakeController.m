@@ -46,13 +46,13 @@
 //      }];
     
     // 配合 complete 事件
-//    [[self.subject
-//      takeLast:2]
-//     subscribeNext:^(id  _Nullable x) {
-//         @strongify(self);
-//         [self.dataSource addObject:x];
-//         [self.tableView reloadData];
-//     }];
+    [[self.subject
+      takeLast:2]
+     subscribeNext:^(id  _Nullable x) {
+         @strongify(self);
+         [self.dataSource addObject:x];
+         [self.tableView reloadData];
+     }];
     
 //    [[self.subject
 //      takeUntil:self.rac_willDeallocSignal]

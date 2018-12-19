@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3F17CA149A1510865FDCC24F /* Pods_RACOperators.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F89C3CFB07E7416220306A7E /* Pods_RACOperators.framework */; };
+		EF056AA221CAACA400EEE754 /* StartController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF056AA121CAACA400EEE754 /* StartController.m */; };
 		EF67971D21B97C27006F3509 /* SkipController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF67971C21B97C27006F3509 /* SkipController.m */; };
 		EF67972021B97C46006F3509 /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF67971F21B97C46006F3509 /* BaseTableViewController.m */; };
 		EF67972321B98686006F3509 /* TakeController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF67972221B98686006F3509 /* TakeController.m */; };
@@ -43,6 +44,8 @@
 /* Begin PBXFileReference section */
 		429A70F1AE807A354A514547 /* Pods-RACOperators.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RACOperators.release.xcconfig"; path = "Target Support Files/Pods-RACOperators/Pods-RACOperators.release.xcconfig"; sourceTree = "<group>"; };
 		739841707E9829622177E9A5 /* Pods-RACOperators.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RACOperators.debug.xcconfig"; path = "Target Support Files/Pods-RACOperators/Pods-RACOperators.debug.xcconfig"; sourceTree = "<group>"; };
+		EF056AA021CAACA400EEE754 /* StartController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StartController.h; sourceTree = "<group>"; };
+		EF056AA121CAACA400EEE754 /* StartController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StartController.m; sourceTree = "<group>"; };
 		EF67971B21B97C27006F3509 /* SkipController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SkipController.h; sourceTree = "<group>"; };
 		EF67971C21B97C27006F3509 /* SkipController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SkipController.m; sourceTree = "<group>"; };
 		EF67971E21B97C46006F3509 /* BaseTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
@@ -153,6 +156,8 @@
 				EF67972221B98686006F3509 /* TakeController.m */,
 				EF67972421B9892B006F3509 /* DistinctController.h */,
 				EF67972521B9892B006F3509 /* DistinctController.m */,
+				EF056AA021CAACA400EEE754 /* StartController.h */,
+				EF056AA121CAACA400EEE754 /* StartController.m */,
 				EFE2F19821B9719200381A68 /* TableViewController.h */,
 				EFE2F19921B9719200381A68 /* TableViewController.m */,
 				EFE2F16C21B9705F00381A68 /* Main.storyboard */,
@@ -366,6 +371,7 @@
 				EFE2F19E21B972F200381A68 /* IgnoringController.m in Sources */,
 				EFE2F17621B9706000381A68 /* main.m in Sources */,
 				EFE2F19A21B9719200381A68 /* TableViewController.m in Sources */,
+				EF056AA221CAACA400EEE754 /* StartController.m in Sources */,
 				EF67972021B97C46006F3509 /* BaseTableViewController.m in Sources */,
 				EF67972621B9892B006F3509 /* DistinctController.m in Sources */,
 				EF67972321B98686006F3509 /* TakeController.m in Sources */,
