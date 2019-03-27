@@ -25,7 +25,10 @@
     self.data = @[
                   @{@"id": @1, @"title": @"text1"},
                   @{@"id": @2, @"title": @"text2"},
-                  @{@"id": @3, @"title": @"text3"}
+                  @{@"id": @3, @"title": @"text3"},
+                  @{@"id": @1, @"title": @"text1"},
+                  @{@"id": @2, @"title": @"text2"},
+                  @{@"id": @3, @"title": @"text3"},
                   ].mutableCopy;
     
     self.theDataSource = @[self.data];
@@ -42,18 +45,27 @@
                                    @{@"id": @1, @"title": @"text1"},
                                    @{@"id": @4, @"title": @"text4"},
                                    @{@"id": @5, @"title": @"text5"}
-                                   ]];
+                                   ].mutableCopy];
             [subscriber sendCompleted];
             return nil;
         }];
     }];
     
-    RAC(self, data) = [[self.command.executionSignals.switchToLatest startWith:self.data] map:^id _Nullable(NSArray * _Nullable value) {
-        return [value.rac_sequence takeUntilBlock:^BOOL(NSDictionary * _Nullable x) {
-            NSDictionary *dict = [self.theDataSource.firstObject firstObject];
-            return [x[@"id"] isEqualToNumber:dict[@"id"]];
-        }].array;
-    }];
+    // 先 log 一次 self.data.copy 的内容
+    // command 执行后发出新获取到的数据
+//    [[self.command.executionSignals.switchToLatest startWith:self.data.copy] subscribeNext:^(id  _Nullable x) {
+//        NSLog(@"~~~%@~~~", x);
+//    }];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        RAC(self, data) = [[self.command.executionSignals.switchToLatest
+                            startWith:self.data]
+                           map:^id _Nullable(NSMutableArray * _Nullable events) {
+                               [events addObject:@{@"id": @9, @"title": @"text9"}];
+                               NSLog(@"%@", events);
+                               return events;
+                           }];
+    });
+   
 }
 
 - (void)add:(UIBarButtonItem *)sender {
